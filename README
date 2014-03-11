@@ -1,2 +1,9 @@
 #VelocityJS
 My answer to the Velocity reader app and Spritz. Why? Because this is a perfectly legitimate excuse not to study...
+
+##Todos:
+* Handle punctuation and line breaks with appropriate pauses
+* Allow user to choose WPM
+* Buttons to pause, go back, etc
+* Chrome extension that overlays this after text has been selected, and choosen to be read through right-click menu.
+* Spritz *like* word alignment

@@ -2,7 +2,7 @@
     <head>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Arvo|Roboto' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 
         <style>
             body {
@@ -62,6 +62,13 @@
                 transform: translateY(-50%);
             }
         </style>
+    </head>
+    <body>
+        <h1 id="output" class="v-center">Paste words you want to read fast below&hellip;</h1>
+        <div class="controls-container">
+            <textarea id="input-field">Oh so you want to read fast? Well you better put something here first, because I guarantee reading this will be boring, even if it is fast. Go ahead and try it punk. Why are you still reading this, you should really be pressing that huge button. Got it?</textarea>
+            <button type="submit" onclick="readFast();">I wanna go fast!</button>
+        </div>
 
         <script type="text/javascript">
 
@@ -70,6 +77,13 @@
             var wordTimer;
             var wordsPerMinute = 650;
             var wordSpeed = 60000/wordsPerMinute;
+
+            // Start off with text area highlighted
+            $("#input-field").select();
+            // Make it easy to paste in
+            $("#input-field").click(function () {
+                $(this).select();
+            });
 
             function readFast () {
                 console.log("Button pressed. Starting.")
@@ -103,12 +117,5 @@
 
 
         </script>
-    </head>
-    <body>
-        <h1 id="output" class="v-center">Paste words you want to read fast below&hellip;</h1>
-        <div class="controls-container">
-            <textarea id="input-field">Oh so you want to read fast? Well you better put something here first, because I guarantee reading this will be boring, even if it is fast. Go ahead and try it punk. Why are you still reading this, you should really be pressing that huge button. Got it?</textarea>
-            <button type="submit" onclick="readFast();">I wanna go fast!</button>
-        </div>
     </body>
 </html>
