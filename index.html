@@ -47,7 +47,8 @@
 
             button {
                 width: 100%;
-                height: 50px;
+                height: 65px;
+                margin: 15px 0;
                 font-size: 1.5em;
                 font-family: 'Arvo';
                 color: #333;
@@ -70,13 +71,14 @@
             var wordsPerMinute = 650;
             var wordSpeed = 60000/wordsPerMinute;
 
-            function clairePoops () {
+            function readFast () {
                 console.log("Button pressed. Starting.")
                 // TODO: make n/m dash replacement work
                 var string = $("#input-field").val().replace("-\n", "").replace("\n", " ").replace("- ", "").replace("-", " ").replace("–", " ").replace("—", " ");
+                
                 toggleControls();
                 words = string.split(' ');
-                console.log(words);
+                // console.log(words);
 
                 wordCounter = 0;
                 wordTimer = setInterval(displayOneWord, wordSpeed);
@@ -106,7 +108,7 @@
         <h1 id="output" class="v-center">Paste words you want to read fast below&hellip;</h1>
         <div class="controls-container">
             <textarea id="input-field">Oh so you want to read fast? Well you better put something here first, because I guarantee reading this will be boring, even if it is fast. Go ahead and try it punk. Why are you still reading this, you should really be pressing that huge button. Got it?</textarea>
-            <button type="submit" onclick="clairePoops();">I wanna go fast!</button>
+            <button type="submit" onclick="readFast();">I wanna go fast!</button>
         </div>
     </body>
 </html>
