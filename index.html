@@ -88,7 +88,7 @@
                 if(wordCounter == words.length) {
                     console.log("Done. Resetting.");
                     toggleControls();
-                    $("#output").text("You just read around " + words.length + " words in roughly " + (words.length * wordSpeed / 1000).toFixed(2) + " seconds!");                 
+                    $("#output").text("You just read roughly " + words.length + " words in " + (words.length * wordSpeed / 1000).toFixed(2) + " seconds!");                 
                     wordCounter = 0;
                     clearInterval(wordTimer);
                 }
