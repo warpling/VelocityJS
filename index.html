@@ -30,6 +30,49 @@
 
             }
 
+            h2 {
+                font-family: 'Arvo', 'Georgia', serif;
+                font-weight: 300;
+                font-size: 2em;
+                text-align: center;
+            }
+
+            ::-webkit-input-placeholder { /* WebKit browsers */
+                font-family: 'Arvo', 'Georgia', serif;
+                font-weight: 100;
+                font-size: 1.3em;
+                text-align: center;
+            }
+            :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                font-family: 'Arvo', 'Georgia', serif;
+                font-weight: 100;
+                font-size: 1.3em;
+                text-align: center;
+            }
+            ::-moz-placeholder { /* Mozilla Firefox 19+ */
+                font-family: 'Arvo', 'Georgia', serif;
+                font-weight: 100;
+                font-size: 1.3em;
+                text-align: center;
+            }
+            :-ms-input-placeholder { /* Internet Explorer 10+ */
+                font-family: 'Arvo', 'Georgia', serif;
+                font-weight: 100;
+                font-size: 1.3em;
+                text-align: center;
+            }
+
+            .WPM-container {
+                border-top: 2pm solid #ccc;
+                text-align: center;
+            }
+
+            input#wpm-field {
+                height: 58px;
+                width: 175px;
+                text-align: center;
+            }
+
             .controls-container {
                 width: 100%;
                 position: absolute;
@@ -54,6 +97,23 @@
                 color: #333;
             }
 
+            button#wpmsubmit {
+                width: auto;
+                height: 65px;
+                margin: 15px 0;
+                font-size: 1.2em;
+                font-family: 'Arvo';
+                color: #333;
+            }
+
+            input#wpmsubmit {
+                height: 65px;
+                margin: 15px 0;
+                font-size: 1.5em;
+                font-family: 'Arvo';
+                color: #333;
+            }
+
             .v-center {
                 position: relative;
                 top: 30%;
@@ -67,6 +127,11 @@
         <h1 id="output" class="v-center">Paste words you want to read fast below&hellip;</h1>
         <div class="controls-container">
             <textarea id="input-field">Oh so you want to read fast? Well you better put something here first, because I guarantee reading this will be boring, even if it is fast. Go ahead and try it punk. Why are you still reading this, you should really be pressing that huge button. Got it?</textarea>
+            <div class="WPM-container">
+                <h2>Words Per Minute:</h2>
+                <input class="wpm" id="wpm-field" placeholder="650" />
+                <button type="submit" class="wpm" id= "wpmsubmit">This fast</button>
+            </div>
             <button type="submit" onclick="readFast();">I wanna go fast!</button>
         </div>
 
@@ -83,6 +148,10 @@
             // Make it easy to paste in
             $("#input-field").click(function () {
                 $(this).select();
+            });
+
+            $("#wpmsubmit").click(function () {
+                wordSpeed = 60000/$("#wpm-field").val();
             });
 
             function readFast () {
